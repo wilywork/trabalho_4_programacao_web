@@ -9,7 +9,7 @@
     Poppins
     DM sans
 # cores
-[Paleta de Cores](https://coolors.co/30b3de-305cde-5b30de){target="_blank"}
+[Paleta de Cores](https://coolors.co/30b3de-305cde-5b30de)
     #30b3de
     #305cde
     #5b30de
