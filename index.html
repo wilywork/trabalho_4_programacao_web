@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sion Solutions</title>
+    <link
+      rel="stylesheet"
+      href="assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+    <!-- <link rel="stylesheet" href="assets/plugins/bootstrap-4.1.3/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="assets/css/style-global.css" />
   </head>
   <body>
@@ -16,7 +21,6 @@
             alt="Sion Solutions"
           />
         </a>
-        <!-- inicio menu -->
         <div class="menu">
           <ul class="grid">
             <li><a class="title" href="#inicio">Início</a></li>
@@ -26,8 +30,7 @@
             <li><a class="title" href="#contato">Contato</a></li>
           </ul>
         </div>
-        <!-- fim menu -->
-        <div class="toggle icon-menu"></div>
+        <div class="toggle icon-menu"><i class="fa fa-bars" aria-hidden="true"></i></div>
         <div class="toggle icon-close"></div>
       </nav>
     </header>
@@ -35,21 +38,89 @@
     <main>
       <!-- INICIO -->
       <section class="section" id="inicio">
-        <div class="container grid"></div>
+        <div class="container grid">
+          <div class="image">
+            <img
+              src="assets/images/home.jpg"
+              alt="demonstração do sistema"
+            />
+          </div>
+          <div class="text">
+            <h2 class="title">Sistemas para industrias de calçados</h2>
+            <p>
+              Sempre em busca das melhores soluções para a sua empresa
+            </p>
+            <a class="button" href="#">Entrar em contato</a>
+          </div>
+        </div>
       </section>
 
       <div class="dividir-1"></div>
 
       <!-- SOBRE -->
       <section class="section" id="sobre">
-        <div class="container grid"></div>
+        <div class="container grid">
+          <div class="image">
+            <img
+              src="assets/images/sobre.jpg"
+              alt="equipe trabalhando"
+            />
+          </div>
+          <div class="text">
+            <h2 class="title">Sobre nós</h2>
+            <p>
+              Foi dentro de uma indústria que nasceu o primeiro sistema da Sion Solutions. Nada melhor do que estar envolvido totalmente nos processos e rotinas de trabalho da indústria para desenvolver um sistema para a própria. Do sonho de fazer uma ferramenta que fosse fácil de utilizar, segura e confiável, surge o Sion ERP.
+            </p>
+            <br />
+            <p>
+              Depois de pesquisas e adequações o Sion ERP cumpre seus objetivos com todos os méritos no mercado em que atua. Nossa ferramenta é confiável porque quem faz conhece desde a produção até o envio da mercadoria para o cliente.
+            </p>
+            <br />
+            <p>
+              A dedicação, o atendimento, a criatividade e os resultados finais deram certo e hoje as soluções que a Sion Solutions oferece já são referência no mercado industrial desde empresas de médio à grande porte
+            </p>
+          </div>
+        </div>
       </section>
 
       <div class="dividir-2"></div>
 
       <!-- SERVIÇOS -->
       <section class="section" id="servicos">
-        <div class="container grid"></div>
+        <div class="container grid">
+          <header>
+            <h2 class="title">Serviços</h2>
+            <p class="subtitle">
+              Utilizando a mais alta tecnologia, integrando de forma segura todos os setores internos, colaboradores, representantes e clientes.
+            </p>
+          </header>
+          <div class="cards grid">
+            <div class="card">
+              <i class="icon-woman-hair"></i>
+              <h3 class="title">Sion ERP</h3>
+              <p>
+                Trabalhamos incansavelmente na busca de eliminar a redundância 
+                de operações que trazem diversos prejuízos para as empresas, entre elas o retrabalho, 
+                alta demanda pessoal e erros humanos.
+              </p>
+            </div>
+            <div class="card">
+              <i class="icon-trim"></i>
+              <h3 class="title">Sion Monitor</h3>
+              <p>
+                monitora e gerencia processos a partir de diversos dispositivos como o seu smartphone.
+              </p>
+            </div>
+            <div class="card">
+              <i class="icon-cosmetic"></i>
+              <h3 class="title">Sion Estoque</h3>
+              <p>
+                Melhore seus resultados aumentando consideravelmente a confiabilidade dos processos,
+                tenha um estoque organizado e garanta a rapidez nas entregas e nas trocas
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
       <div class="dividir-1"></div>
@@ -74,10 +145,13 @@
     </footer>
 
     <a href="#inicio" class="back-to-top">
-      <i class="icon-arrow-up"></i>
+      <i class="fa fa-angle-up" aria-hidden="true"></i>
     </a>
 
-    <!-- index.js -->
+    <!-- javascripts -->
+    <!-- <script src="./assets/plugins/jquery-3.6.0/jquery.min.js"></script> -->
+    <!-- <script src="./assets/plugins/bootstrap-4.1.3/js/bootstrap.min.js"></script> -->
+    <script src="./assets/plugins/scrollreveal-4.0.9/scrollreveal.min.js"></script>
     <script src="./assets/js/index.js"></script>
   </body>
 </html>

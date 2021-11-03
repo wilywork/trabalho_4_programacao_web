@@ -13,3 +13,7 @@
     #30b3de
     #305cde
     #5b30de
+# Icones
+[IcoMoon](https://icomoon.io/)
+# Imagens
+[Pixabay](https://pixabay.com/pt/)
