@@ -410,9 +410,10 @@ nav.show div.icon-close {
   margin-bottom: 0.75rem;
 }
 
-/*==============  PORTIFOLIO ================== */
+/*==============  PORTFOLIO ================== */
 #portfolio {
   background: white;
+  overflow: hidden;
 }
 
 #portfolio .container {
@@ -660,7 +661,7 @@ footer .social a:hover {
     padding-right: 3rem;
   }
 
-  /* testimonials */
+  /* portfolio */
   #portfolio .container {
     margin-left: auto;
     margin-right: auto;
