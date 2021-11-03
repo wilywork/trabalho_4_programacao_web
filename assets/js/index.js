@@ -1,110 +1,98 @@
-/*  abre e fecha o menu quando clicar no icone: hamburguer e x */
-const nav = document.querySelector('#header nav')
-const toggle = document.querySelectorAll('nav .toggle')
 
-for (const element of toggle) {
-  element.addEventListener('click', function () {
-    nav.classList.toggle('show')
-  })
-}
+window.onload = function () {
 
-/* quando clicar em um item do menu, esconder o menu */
-const links = document.querySelectorAll('nav ul li a')
-
-for (const link of links) {
-  link.addEventListener('click', function () {
-    nav.classList.remove('show')
-  })
-}
-
-/* mudar o header da página quando der scroll */
-const header = document.querySelector('#header')
-const navHeight = header.offsetHeight
-
-function changeHeaderWhenScroll() {
-  if (window.scrollY >= navHeight) {
-    // scroll é maior que a altura do header
-    header.classList.add('scroll')
-  } else {
-    // menor que a altura do header
-    header.classList.remove('scroll')
+  // ativa os eventos de click no menu
+  const nav = document.querySelector("#header nav");
+  const toggle = document.querySelectorAll("nav .toggle");
+  for (const element of toggle) {
+    element.addEventListener("click", function () {
+      nav.classList.toggle("show");
+    });
   }
-}
 
-/* portfolio carousel slider swiper */
-const swiper = new Swiper('.swiper-container', {
-  slidesPerView: 1,
-  pagination: {
-    el: '.swiper-pagination'
-  },
-  mousewheel: true,
-  keyboard: true,
-  breakpoints: {
-    767: {
-      slidesPerView: 2,
-      setWrapperSize: true
-    }
-  }
-})
+  const header = document.querySelector("#header");
+  const navHeight = header.offsetHeight;
+  const voltarParaTopoButton = document.querySelector(".back-to-top");
+  const sections = document.querySelectorAll("main section[id]");
 
-/* ScrollReveal: Mostrar elementos quando der scroll na página */
-const scrollReveal = ScrollReveal({
-  origin: 'top',
-  distance: '30px',
-  duration: 700,
-  reset: true
-})
+  // ativa o swiper
+  const swiper = new Swiper(".swiper-container", {
+    slidesPerView: 1,
+    pagination: {
+      el: ".swiper-pagination",
+    },
+    mousewheel: true,
+    keyboard: true,
+    breakpoints: {
+      767: {
+        slidesPerView: 2,
+        setWrapperSize: true,
+      },
+    },
+  });
 
-scrollReveal.reveal(
-  `#home .image, #home .text,
-  #about .image, #about .text,
-  #services header, #services .card,
+  // ativa o ScrollReveal
+  const scrollReveal = ScrollReveal({
+    origin: "top",
+    distance: "30px",
+    duration: 700,
+    reset: true,
+  });
+  scrollReveal.reveal(
+    `#inicio .image, #inicio .text,
+  #sobre .image, #sobre .text,
+  #servicos header, #servicos .card,
   #portfolio header, #portfolio .portfolio
-  #contact .text, #contact .links,
+  #contato .text, #contato .links,
   footer .brand, footer .social
   `,
-  { interval: 100 }
-)
+    { interval: 100 }
+  );
 
-/* Botão voltar para o topo */
-const backToTopButton = document.querySelector('.back-to-top')
+  // tratamentos no scroll da landing page
+  window.addEventListener("scroll", function () {
+    changeHeaderWhenScroll(header, navHeight);
+    voltarParaTopo(voltarParaTopoButton);
+    ativarMenuDuranteScroll(sections);
+  });
 
-function backToTop() {
-  if (window.scrollY >= 560) {
-    backToTopButton.classList.add('show')
+};
+
+function changeHeaderWhenScroll(header, navHeight) {
+  if (window.scrollY >= navHeight) {
+    header.classList.add("scroll");
   } else {
-    backToTopButton.classList.remove('show')
+    header.classList.remove("scroll");
   }
 }
 
-/* Menu ativo conforme a seção visível na página */
-const sections = document.querySelectorAll('main section[id]')
-function activateMenuAtCurrentSection() {
-  const checkpoint = window.pageYOffset + (window.innerHeight / 8) * 4
+function voltarParaTopo(voltarParaTopoButton) {
+  if (window.scrollY >= 560) {
+    voltarParaTopoButton.classList.add("show");
+  } else {
+    voltarParaTopoButton.classList.remove("show");
+  }
+}
+
+function ativarMenuDuranteScroll(sections) {
+  const checkpoint = window.pageYOffset + (window.innerHeight / 8) * 4;
 
   for (const section of sections) {
-    const sectionTop = section.offsetTop
-    const sectionHeight = section.offsetHeight
-    const sectionId = section.getAttribute('id')
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    const sectionId = section.getAttribute("id");
 
-    const checkpointStart = checkpoint >= sectionTop
-    const checkpointEnd = checkpoint <= sectionTop + sectionHeight
+    const checkpointStart = checkpoint >= sectionTop;
+    const checkpointEnd = checkpoint <= sectionTop + sectionHeight;
 
     if (checkpointStart && checkpointEnd) {
       document
-        .querySelector('nav ul li a[href*=' + sectionId + ']')
-        .classList.add('active')
+        .querySelector("nav ul li a[href*=" + sectionId + "]")
+        .classList.add("active");
     } else {
       document
-        .querySelector('nav ul li a[href*=' + sectionId + ']')
-        .classList.remove('active')
+        .querySelector("nav ul li a[href*=" + sectionId + "]")
+        .classList.remove("active");
     }
   }
 }
-
-/* When Scroll */
-window.addEventListener('scroll', function () {
-  changeHeaderWhenScroll()
-  backToTop()
-  activateMenuAtCurrentSection()
-})
