@@ -9,6 +9,14 @@ window.onload = function () {
       nav.classList.toggle("show");
     });
   }
+  // ocultar menu ao selecionar uma opcao
+  const links = document.querySelectorAll('nav ul li a')
+  for (const link of links) {
+    link.addEventListener('click', function () {
+      console.log(1111);
+      nav.classList.remove('show')
+    })
+  }
 
   const voltarParaTopoButton = document.querySelector(".back-to-top");
   const sections = document.querySelectorAll("main section[id]");
