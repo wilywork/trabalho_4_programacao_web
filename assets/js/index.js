@@ -10,8 +10,6 @@ window.onload = function () {
     });
   }
 
-  const header = document.querySelector("#header");
-  const navHeight = header.offsetHeight;
   const voltarParaTopoButton = document.querySelector(".back-to-top");
   const sections = document.querySelectorAll("main section[id]");
 
@@ -51,20 +49,11 @@ window.onload = function () {
 
   // tratamentos no scroll da landing page
   window.addEventListener("scroll", function () {
-    changeHeaderWhenScroll(header, navHeight);
     voltarParaTopo(voltarParaTopoButton);
     ativarMenuDuranteScroll(sections);
   });
 
 };
-
-function changeHeaderWhenScroll(header, navHeight) {
-  if (window.scrollY >= navHeight) {
-    header.classList.add("scroll");
-  } else {
-    header.classList.remove("scroll");
-  }
-}
 
 function voltarParaTopo(voltarParaTopoButton) {
   if (window.scrollY >= 560) {
